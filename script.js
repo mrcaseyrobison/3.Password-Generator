@@ -1,50 +1,27 @@
-//NOTES:
+// Input Variables
+var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+var special = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", ",", ".", "<", ">", "/", "?", ";", ":", "=", "+", "-",]
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
-// In Class -- What sort of data does my application need to work? 
-// Storing all needed characters in variables (see: Array)
+// Console Log (for debug)
+console.log(numbers)
+console.log(special)
+console.log(lowercase)
+console.log(uppercase)
 
-// Numbers
-// Special Characters
-// Lower Case
-// Upper Case
+// Reference Code
+function generatePassword() {}
 
-
-// What sorts of tasks does my code need to complete?
-
-// 1. Generate a password (DECLARE A FUNCTION)
-function generatePassword() {
-
-  // Prompt the user for their password length and store it in a variable
-  // Validate password legnth and make sure it's a number equal to 8 and 128
-  // Prompt the user for the use of special characters and store the true or false and store it in a variable
-  // 
-
-}
-
-
-
-
-
-
-
-
-// Cancel = False / Okay = True (Boolean variables) -- Four Booleans
-
-// 1 letter at a time -- built through string (one at a time)
-
-// --------------- //
-
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+  
+    passwordText.value = password;
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// End Reference Code

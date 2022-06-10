@@ -16,10 +16,10 @@ var userChoiceLower;
 var userChoiceUpper;
 
 // Begin Password Functions
-
 function generatePassword() {
         userChoiceLength = (prompt ("How long do you want your password? Choose a number between 8 and 128."))
 
+// Conditional to Force User Choice
 if (userChoiceLength < 8 || userChoiceLength > 128) { 
     alert ("Password must be between 8 and 128 characters")
     return;
@@ -27,7 +27,7 @@ if (userChoiceLength < 8 || userChoiceLength > 128) {
 
 console.log ("User Password Length: " + userChoiceLength);
 
-
+// Prompts
 if (userChoiceLength >=8 && userChoiceLength <= 128) { 
 
     userChoiceNumbers = window.confirm ("Click OK to use numbers");
@@ -43,6 +43,7 @@ if (userChoiceLength >=8 && userChoiceLength <= 128) {
     console.log ("Upper Case Letters Choice: " + userChoiceUpper);
 }
 
+// Conditional to Force User to Choose at Least One Perameter
 if (userChoiceNumbers == false && special == false && lower == false && upper == false) {
     alert ("You must choose at least one perameter")
     return;
@@ -73,8 +74,10 @@ if (userChoiceUpper) {
 
 console.log ("Perameter Options by User Choice: " + allCharacters);
 
+// Password Variable
 var userPassword = ""
 
+// For Loop to Randomize Final User Choices
 for (var i = 0; i < userChoiceLength; i++) {
     userPassword = userPassword + allCharacters [Math.floor(Math.random() * allCharacters.length)];
 console.log (userPassword)
@@ -82,21 +85,18 @@ console.log (userPassword)
 
 console.log ("User password is: " + userPassword)
 
+// Ends Code Run (Without This Password is: "Undefined")
 return userPassword;
 
 } 
 
-//Console Log to Confirm User Choice
-
+//Console Logs to Verify Character Arrays
 console.log ("Numbers: " + numbers);
 console.log ("Special Characters: " + special);
 console.log ("Lower Case Letters: " + lower);
 console.log ("Upper Case Letters: " + upper);
 
-
-
-
-// Define Goal
+// Write Password Function
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");

@@ -8,31 +8,42 @@ var special = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", ",", 
 var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-// // Variable Declerations
-var confirmLength ="";
-var confirmNumbers;
-var confirmSpecial;
-var confirmLower;
-var confirmUpper;
+// // User Confirmed Variables
+var userChoiceLength ="";
+var userChoiceNumbers;
+var userChoiceSpecial;
+var userChoiceLower;
+var userChoiceUpper;
 
 // Begin Password Functions
 
 function generatePassword() {
-        confirmLength = (prompt ("How long do you want your password? Choose a number between 8 and 128."))
+        userChoiceLength = (prompt ("How long do you want your password? Choose a number between 8 and 128."))
 
-if (confirmLength < 8 || confirmLength > 128) { 
+if (userChoiceLength < 8 || userChoiceLength > 128) { 
     alert ("Password must be between 8 and 128 characters")
     return;
 }
 
-if (confirmLength >=8 && confirmLength <= 128) { 
-    confirmNumbers = window.confirm ("Click OK to use numbers");
-    confirmSpecial = window.confirm ("Click OK to use special characters");
-    confirmLower = window.confirm ("Click OK to use lower case letters");
-    confirmUpper = window.confirm ("Click OK to use upper case letters");
+console.log ("User Password Length: " + userChoiceLength);
+
+
+if (userChoiceLength >=8 && userChoiceLength <= 128) { 
+
+    userChoiceNumbers = window.confirm ("Click OK to use numbers");
+    console.log ("User Number Choice: " + userChoiceNumbers);
+
+    userChoiceSpecial = window.confirm ("Click OK to use special characters");
+    console.log ("User Special Characters Choice: " + userChoiceSpecial);
+
+    userChoiceLower = window.confirm ("Click OK to use lower case letters");
+    console.log ("Lower Case Letters Choice: " + userChoiceLower);
+
+    userChoiceUpper = window.confirm ("Click OK to use upper case letters");
+    console.log ("Upper Case Letters Choice: " + userChoiceUpper);
 }
 
-if (confirmNumbers == false && special == false && lower == false && upper == false) {
+if (userChoiceNumbers == false && special == false && lower == false && upper == false) {
     alert ("You must choose at least one perameter")
     return;
 }
@@ -40,23 +51,23 @@ if (confirmNumbers == false && special == false && lower == false && upper == fa
 // Concat Array
 var allCharacters = []
 
-if (confirmLength) {
+if (userChoiceLength) {
     allCharacters = allCharacters.concat(length)
 }
 
-if (confirmNumbers) {
+if (userChoiceNumbers) {
     allCharacters = allCharacters.concat(numbers)
 }
 
-if (confirmSpecial) {
+if (userChoiceSpecial) {
     allCharacters = allCharacters.concat(special)
 }
 
-if (confirmLower) {
+if (userChoiceLower) {
     allCharacters = allCharacters.concat(lower)
 }
 
-if (confirmUpper) {
+if (userChoiceUpper) {
     allCharacters = allCharacters.concat(upper)
 }
 
@@ -64,10 +75,13 @@ console.log ("Perameter Options by User Choice: " + allCharacters);
 
 var userPassword = ""
 
-for (var i = 0; i < confirmLength; i++) {
+for (var i = 0; i < userChoiceLength; i++) {
     userPassword = userPassword + allCharacters [Math.floor(Math.random() * allCharacters.length)];
 console.log (userPassword)
 }
+
+console.log ("User password is: " + userPassword)
+
 return userPassword;
 
 } 
@@ -78,13 +92,9 @@ console.log ("Numbers: " + numbers);
 console.log ("Special Characters: " + special);
 console.log ("Lower Case Letters: " + lower);
 console.log ("Upper Case Letters: " + upper);
-console.log ("User Password Length: " + confirmLength);
-console.log ("User Number Choice: " + confirmNumbers);
-console.log ("User Special Characters Choice: " + confirmSpecial);
-console.log ("Lower Case Letters Choice: " + confirmLower);
-console.log ("Upper Case Letters Choice: " + confirmUpper);
 
-// console.log ("User Password: " + userPassword)
+
+
 
 // Define Goal
 function writePassword() {

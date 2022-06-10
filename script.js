@@ -44,7 +44,7 @@ if (userChoiceLength >=8 && userChoiceLength <= 128) {
 }
 
 // Conditional to Force User to Choose at Least One Perameter
-if (userChoiceNumbers == false && special == false && lower == false && upper == false) {
+if (userChoiceNumbers == false && userChoiceSpecial == false && userChoiceLower == false && userChoiceUpper == false) {
     alert ("You must choose at least one perameter")
     return;
 }
@@ -80,7 +80,9 @@ var userPassword = ""
 // For Loop to Randomize Final User Choices
 for (var i = 0; i < userChoiceLength; i++) {
     userPassword = userPassword + allCharacters [Math.floor(Math.random() * allCharacters.length)];
-console.log (userPassword)
+
+    // console.log below, if run, shows process of randomization (commented out)
+    // console.log (userPassword)
 }
 
 console.log ("User password is: " + userPassword)

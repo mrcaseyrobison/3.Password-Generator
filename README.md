@@ -1,4 +1,11 @@
 # 3.-Password-Generator
+
+GitPages: 
+
+https://mrcaseyrobison.github.io/3.Password-Generator/
+
+-----------
+
 A random password web app developed with JavaScript.
 
 + Started by connecting JS doc to index.html via "getElemenetById"
